@@ -8,8 +8,8 @@ defmodule Eye.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-      # Starts a worker by calling: Eye.Worker.start_link(arg)
-      # {Eye.Worker, arg},
+      child_spec_no_args(Picam.Camera),
+      Plug.Adapters.Cowboy.child_spec(:http, Eye.Router, [], [port: 80])
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -17,4 +17,9 @@ defmodule Eye.Application do
     opts = [strategy: :one_for_one, name: Eye.Supervisor]
     Supervisor.start_link(children, opts)
   end
+
+  defp child_spec_no_args(module) do
+    %{id: module, start: {module, :start_link, []}}
+  end
+
 end
