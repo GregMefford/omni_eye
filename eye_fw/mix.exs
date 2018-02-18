@@ -3,7 +3,7 @@ defmodule EyeFw.MixProject do
 
   @app :eye_fw
   @version "0.1.0"
-  @all_targets [:rpi, :rpi0, :rpi2, :rpi3, :rpi3a, :rpi4, :bbb, :x86_64]
+  @all_targets [:rpi0]
 
   def project do
     [
@@ -39,6 +39,7 @@ defmodule EyeFw.MixProject do
   defp deps do
     [
       # Dependencies for all targets
+      {:eye, path: "../eye"},
       {:nerves, "~> 1.5.0", runtime: false},
       {:shoehorn, "~> 0.6"},
       {:ring_logger, "~> 0.6"},
@@ -49,14 +50,7 @@ defmodule EyeFw.MixProject do
       {:nerves_init_gadget, "~> 0.4", targets: @all_targets},
 
       # Dependencies for specific targets
-      {:nerves_system_rpi, "~> 1.8", runtime: false, targets: :rpi},
       {:nerves_system_rpi0, "~> 1.8", runtime: false, targets: :rpi0},
-      {:nerves_system_rpi2, "~> 1.8", runtime: false, targets: :rpi2},
-      {:nerves_system_rpi3, "~> 1.8", runtime: false, targets: :rpi3},
-      {:nerves_system_rpi3a, "~> 1.8", runtime: false, targets: :rpi3a},
-      {:nerves_system_rpi4, "~> 1.8", runtime: false, targets: :rpi4},
-      {:nerves_system_bbb, "~> 2.3", runtime: false, targets: :bbb},
-      {:nerves_system_x86_64, "~> 1.8", runtime: false, targets: :x86_64},
     ]
   end
 
