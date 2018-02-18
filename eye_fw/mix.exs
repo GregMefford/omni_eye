@@ -1,7 +1,7 @@
 defmodule EyeFw.MixProject do
   use Mix.Project
 
-  @all_targets [:rpi, :rpi0, :rpi2, :rpi3, :rpi3a, :bbb, :x86_64]
+  @all_targets [:rpi0]
 
   def project do
     [
@@ -35,6 +35,7 @@ defmodule EyeFw.MixProject do
   defp deps do
     [
       # Dependencies for all targets
+      {:eye, path: "../eye"},
       {:nerves, "~> 1.4", runtime: false},
       {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.6"},
