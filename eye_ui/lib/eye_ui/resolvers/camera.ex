@@ -1,4 +1,4 @@
-defmodule Eye.Resolvers.Camera do
+defmodule EyeUi.Resolvers.Camera do
 
   def get_config(_parent, _args, _resolution) do
     {:ok, Eye.Camera.get_config()}
