@@ -22,6 +22,14 @@ config :shoehorn,
 
 config :logger, backends: [RingLogger]
 
+config :logger,
+  level: :info,
+  utc_log: true
+
+config :logger, RingLogger,
+  level: :info,
+  format: "$dateT$time [$level] $message\n"
+
 # Authorize the device to receive firmware using your public key.
 # See https://hexdocs.pm/nerves_firmware_ssh/readme.html for more information
 # on configuring nerves_firmware_ssh.
