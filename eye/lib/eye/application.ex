@@ -14,6 +14,7 @@ defmodule Eye.Application do
     # List all child processes to be supervised
     children = [
       Application.get_env(:picam, :camera, Picam.Camera),
+      Eye.Camera,
       Eye.BarcodeScanner,
       Plug.Cowboy.child_spec(scheme: :http, plug: Eye.Router, options: cowboy_opts)
     ]
