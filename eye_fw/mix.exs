@@ -50,7 +50,9 @@ defmodule EyeFw.MixProject do
       {:nerves_init_gadget, "~> 0.4", targets: @all_targets},
 
       # Dependencies for specific targets
-      {:nerves_system_rpi0, "~> 1.8", runtime: false, targets: :rpi0},
+      # If you want to try your locally-compiled version, switch the commented-out line:
+      {:nerves_system_rpi0_zbar, "~> 1.8", runtime: false, targets: :rpi0},
+      #{:nerves_system_rpi0_zbar, path: "../../nerves_system_rpi0_zbar", runtime: false, targets: :rpi0},
     ]
   end
 
