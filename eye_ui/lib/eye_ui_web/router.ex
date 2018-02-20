@@ -13,6 +13,16 @@ defmodule EyeUiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  forward "/video.mjpg", EyeUi.JPEGStreamer
+
+  forward "/graphql", Absinthe.Plug,
+    schema: EyeUi.Schema
+
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+    schema: EyeUi.Schema,
+    socket: EyeUiWeb.UserSocket,
+    interface: :simple
+
   scope "/", EyeUiWeb do
     pipe_through :browser
 

@@ -26,7 +26,7 @@ defmodule EyeUi.JPEGStreamer do
   end
 
   defp send_picture(conn) do
-    jpg = Eye.Camera.next_frame
+    jpg = Eye.Camera.next_frame()
     size = byte_size(jpg)
     header = "------#{@boundary}\r\nContent-Type: image/jpeg\r\nContent-length: #{size}\r\n\r\n"
     footer = "\r\n"
