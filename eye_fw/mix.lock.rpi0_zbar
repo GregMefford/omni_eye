@@ -1,4 +1,6 @@
 %{
+  "absinthe": {:hex, :absinthe, "1.4.12", "50e7a70088e5896fe3581958f36f6b6bd9e6f36b9626d85db42f1283bbdd5d86", [:mix], [{:dataloader, "~> 1.0.0", [hex: :dataloader, repo: "hexpm", optional: true]}, {:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm"},
+  "absinthe_plug": {:hex, :absinthe_plug, "1.4.4", "f93db43554ee75ab5d23a7757f27cf3edc8b240d8b6f8f7f2764578ac502a8d6", [:mix], [{:absinthe, "~> 1.4.11", [hex: :absinthe, repo: "hexpm", optional: false]}, {:plug, "~> 1.3.2 or ~> 1.4", [hex: :plug, repo: "hexpm", optional: false]}], "hexpm"},
   "cowboy": {:hex, :cowboy, "1.0.4", "a324a8df9f2316c833a470d918aaf73ae894278b8aa6226ce7a9bf699388f878", [:make, :rebar], [{:cowlib, "~> 1.0.0", [hex: :cowlib, repo: "hexpm", optional: false]}, {:ranch, "~> 1.0", [hex: :ranch, repo: "hexpm", optional: false]}], "hexpm"},
   "cowlib": {:hex, :cowlib, "1.0.2", "9d769a1d062c9c3ac753096f868ca121e2730b9a377de23dec0f7e08b1df84ee", [:make], [], "hexpm"},
   "dhcp_server": {:hex, :dhcp_server, "0.3.0", "83f7259dbf810937f33af2e69e3c300c9d2de639ee3b107d31126eed24477b0e", [:make, :mix], [{:elixir_make, "~> 0.4", [hex: :elixir_make, repo: "hexpm", optional: false]}, {:nerves_network, "~> 0.3", [hex: :nerves_network, repo: "hexpm", optional: true]}], "hexpm"},

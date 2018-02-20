@@ -11,6 +11,7 @@ defmodule Eye.Application do
 
     children = [
       child_spec_no_args(picam_camera),
+      Eye.Camera,
       Eye.BarcodeScanner,
       Plug.Adapters.Cowboy.child_spec(:http, Eye.Router, [], [port: port])
     ]
