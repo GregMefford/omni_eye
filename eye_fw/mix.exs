@@ -1,7 +1,7 @@
 defmodule EyeFw.MixProject do
   use Mix.Project
 
-  @all_targets [:rpi0]
+  @all_targets [:rpi0, :rpi0_zbar]
 
   def project do
     [
@@ -48,6 +48,9 @@ defmodule EyeFw.MixProject do
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.6", runtime: false, targets: :rpi},
       {:nerves_system_rpi0, "~> 1.6", runtime: false, targets: :rpi0},
+      {:nerves_system_rpi0_zbar, path: "../../nerves_system_rpi0_zbar", runtime: false, targets: :rpi0_zbar},
+      # In case your local build doesn't work:
+      #{:nerves_system_rpi0_zbar, "~> 1.6", runtime: false, targets: :rpi0_zbar},
       {:nerves_system_rpi2, "~> 1.6", runtime: false, targets: :rpi2},
       {:nerves_system_rpi3, "~> 1.6", runtime: false, targets: :rpi3},
       {:nerves_system_rpi3a, "~> 1.6", runtime: false, targets: :rpi3a},
