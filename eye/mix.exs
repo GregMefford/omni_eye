@@ -24,11 +24,6 @@ defmodule Eye.MixProject do
     [
       {:picam, "~> 0.3.0"},
       {:zbar, "~> 0.1.0"},
-      {:cowboy, "~> 1.0.0"},
-      {:plug, "~> 1.0"},
-      {:absinthe, "~> 1.4"},
-      {:absinthe_plug, "~> 1.4"},
-      {:poison, "~> 3.1.0"}
     ]
   end
 end

@@ -39,7 +39,7 @@ defmodule EyeFw.MixProject do
     [
       {:nerves, "~> 1.0", runtime: false},
       {:shoehorn, "~> 0.2"},
-      {:eye, path: "../eye"}
+      {:eye_ui, path: "../eye_ui"},
     ] ++ deps(@target)
   end
 

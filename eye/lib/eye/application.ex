@@ -6,14 +6,12 @@ defmodule Eye.Application do
   use Application
 
   def start(_type, _args) do
-    port = Application.get_env(:eye, :port)
     picam_camera = Application.get_env(:picam, :camera)
 
     children = [
       child_spec_no_args(picam_camera),
       Eye.Camera,
-      Eye.BarcodeScanner,
-      Plug.Adapters.Cowboy.child_spec(:http, Eye.Router, [], [port: port])
+      Eye.BarcodeScanner
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

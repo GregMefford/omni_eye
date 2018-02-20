@@ -1,5 +1,7 @@
 use Mix.Config
 
+config :picam, camera: Picam.Camera
+
 # For production, we often load configuration from external
 # sources, such as your system environment. For this reason,
 # you won't find the :http configuration below, but set inside
@@ -16,6 +18,7 @@ use Mix.Config
 config :eye_ui, EyeUiWeb.Endpoint,
   load_from_system_env: true,
   url: [host: "example.com", port: 80],
+  server: true,
   cache_static_manifest: "priv/static/cache_manifest.json"
 
 # Do not print debug messages in production
@@ -61,4 +64,4 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"

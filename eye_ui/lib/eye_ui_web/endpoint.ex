@@ -1,5 +1,6 @@
 defmodule EyeUiWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :eye_ui
+  use Absinthe.Phoenix.Endpoint
 
   socket "/socket", EyeUiWeb.UserSocket
 
@@ -9,7 +10,7 @@ defmodule EyeUiWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :eye_ui, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt)
+    only: ~w(css fonts images js favicon.ico robots.txt index.html)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
