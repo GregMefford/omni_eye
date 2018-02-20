@@ -9,14 +9,13 @@ defmodule EyeUi.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      EyeUiWeb.Endpoint
-      # Starts a worker by calling: EyeUi.Worker.start_link(arg)
-      # {EyeUi.Worker, arg},
+      EyeUiWeb.Endpoint,
+      {Task.Supervisor, [name: EyeUi.TaskSupervisor]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: EyeUi.Supervisor]
+    opts = [strategy: :rest_for_one, name: EyeUi.Supervisor]
     Supervisor.start_link(children, opts)
   end
 

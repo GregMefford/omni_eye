@@ -6,17 +6,11 @@ defmodule Eye.Application do
   use Application
 
   def start(_type, _args) do
-    cowboy_opts = [
-      port: Application.get_env(:eye, :port, 80),
-      protocol_options: [idle_timeout: :infinity]
-    ]
-
     # List all child processes to be supervised
     children = [
       Application.get_env(:picam, :camera, Picam.Camera),
       Eye.Camera,
-      Eye.BarcodeScanner,
-      Plug.Cowboy.child_spec(scheme: :http, plug: Eye.Router, options: cowboy_opts)
+      Eye.BarcodeScanner
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

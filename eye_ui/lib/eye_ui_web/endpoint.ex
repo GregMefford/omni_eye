@@ -1,5 +1,6 @@
 defmodule EyeUiWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :eye_ui
+  use Absinthe.Phoenix.Endpoint
 
   socket "/socket", EyeUiWeb.UserSocket,
     websocket: true,

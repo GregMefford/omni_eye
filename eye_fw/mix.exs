@@ -39,7 +39,7 @@ defmodule EyeFw.MixProject do
   defp deps do
     [
       # Dependencies for all targets
-      {:eye, path: "../eye"},
+      {:eye_ui, path: "../eye_ui"},
       {:nerves, "~> 1.5.0", runtime: false},
       {:shoehorn, "~> 0.6"},
       {:ring_logger, "~> 0.6"},

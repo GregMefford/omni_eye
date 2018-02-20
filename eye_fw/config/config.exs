@@ -34,6 +34,11 @@ config :logger, RingLogger,
   level: :info,
   format: "$dateT$time [$level] $message\n"
 
-if Mix.target() != :host do
+# Pull in the base configuration from the `eye_ui` application.
+import_config "../../eye_ui/config/base.exs"
+
+if Mix.target() == :host do
+  import_config "host.exs"
+else
   import_config "target.exs"
 end
