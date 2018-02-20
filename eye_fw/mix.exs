@@ -53,6 +53,8 @@ defmodule EyeFw.MixProject do
     ] ++ system(target)
   end
 
-  defp system("rpi0"), do: [{:nerves_system_rpi0, "~> 1.4.0", runtime: false}]
+  defp system("rpi0_zbar"), do: [{:nerves_system_rpi0_zbar, path: "../../nerves_system_rpi0_zbar", runtime: false}]
+  # In case your local build doesn't work:
+  # defp system("rpi0_zbar"), do: [{:nerves_system_rpi0_zbar, "~> 1.4.0", runtime: false}]
   defp system(target), do: Mix.raise("Unknown MIX_TARGET: #{target}")
 end
