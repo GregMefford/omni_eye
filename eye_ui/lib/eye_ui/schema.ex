@@ -1,10 +1,10 @@
-defmodule Eye.Schema do
+defmodule EyeUi.Schema do
   use Absinthe.Schema
 
   import_types Absinthe.Type.Custom
-  import_types Eye.Schema.CameraTypes
+  import_types EyeUi.Schema.CameraTypes
 
-  alias Eye.Resolvers
+  alias EyeUi.Resolvers
 
   query name: "Query" do
 
