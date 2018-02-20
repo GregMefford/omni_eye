@@ -1,4 +1,4 @@
-defmodule Eye.Schema.CameraTypes do
+defmodule EyeUi.Schema.CameraTypes do
   use Absinthe.Schema.Notation
 
   @desc "Camera configuration"
