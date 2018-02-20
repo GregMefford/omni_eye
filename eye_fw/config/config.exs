@@ -30,6 +30,9 @@ config :logger, RingLogger,
   level: :info,
   format: "$dateT$time [$level] $message\n"
 
+# Pull in the base configuration from the `eye_ui` application.
+import_config "../../eye_ui/config/base.exs"
+
 # Authorize the device to receive firmware using your public key.
 # See https://hexdocs.pm/nerves_firmware_ssh/readme.html for more information
 # on configuring nerves_firmware_ssh.
@@ -57,5 +60,4 @@ config :nerves_init_gadget,
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations
-
-# import_config "#{Mix.Project.config[:target]}.exs"
+import_config "#{Mix.Project.config[:target]}.exs"

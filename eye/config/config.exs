@@ -21,8 +21,6 @@ use Mix.Config
 #     config :logger, level: :info
 #
 
-config :eye, port: 4000
-
 config :picam, camera: Picam.FakeCamera
 
 config :logger,

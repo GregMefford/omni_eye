@@ -37,10 +37,11 @@ defmodule EyeFw.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:eye, path: "../eye"},
+      {:eye_ui, path: "../eye_ui"},
       {:nerves, "~> 1.3", runtime: false},
-      {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.4"},
-      {:eye, path: "../eye"}
+      {:shoehorn, "~> 0.4"}
     ] ++ deps(@target)
   end
 

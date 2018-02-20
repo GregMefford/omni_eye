@@ -7,14 +7,12 @@ defmodule Eye.Application do
 
   def start(_type, _args) do
     camera_module = Application.get_env(:picam, :camera, Picam.Camera)
-    cowboy_port = Application.get_env(:eye, :port, 80)
 
     # List all child processes to be supervised
     children = [
       camera_module,
       Eye.Camera,
-      Eye.BarcodeScanner,
-      Plug.Adapters.Cowboy.child_spec(:http, Eye.Router, [], [port: cowboy_port])
+      Eye.BarcodeScanner
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
