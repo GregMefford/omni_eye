@@ -1,4 +1,4 @@
-defmodule Eye.JPEGStreamer do
+defmodule EyeUi.JPEGStreamer do
   import Plug.Conn
 
   @behaviour Plug
