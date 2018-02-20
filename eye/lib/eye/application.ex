@@ -14,12 +14,13 @@ defmodule Eye.Application do
     # List all child processes to be supervised
     children = [
       Application.get_env(:picam, :camera, Picam.Camera),
+      Eye.BarcodeScanner,
       Plug.Cowboy.child_spec(scheme: :http, plug: Eye.Router, options: cowboy_opts)
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Eye.Supervisor]
+    opts = [strategy: :rest_for_one, name: Eye.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
