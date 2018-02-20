@@ -5,6 +5,18 @@
 # is restricted to this project.
 use Mix.Config
 
+config :eye, port: 80
+
+config :picam, camera: Picam.Camera
+
+config :logger,
+  level: :info,
+  utc_log: true
+
+config :logger, :console,
+  level: :info,
+  format: "$dateT$time [$level] $message\n"
+
 # Customize non-Elixir parts of the firmware.  See
 # https://hexdocs.pm/nerves/advanced-configuration.html for details.
 config :nerves, :firmware, rootfs_overlay: "rootfs_overlay"
