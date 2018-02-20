@@ -11,7 +11,8 @@ defmodule Eye.Application do
 
     # List all child processes to be supervised
     children = [
-      {camera_module, []},
+      camera_module,
+      Eye.Camera,
       Eye.BarcodeScanner,
       Plug.Adapters.Cowboy.child_spec(:http, Eye.Router, [], [port: cowboy_port])
     ]

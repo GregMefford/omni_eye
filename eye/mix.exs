@@ -22,6 +22,8 @@ defmodule Eye.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"},
       {:cowboy, "~> 1.1.2"},
       {:picam, "~> 0.3.0"},
       {:plug, "~> 1.6.2"},
