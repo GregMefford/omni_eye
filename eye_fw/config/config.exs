@@ -26,6 +26,14 @@ config :shoehorn,
 
 config :logger, backends: [RingLogger]
 
+config :logger,
+  level: :info,
+  utc_log: true
+
+config :logger, RingLogger,
+  level: :info,
+  format: "$dateT$time [$level] $message\n"
+
 if Mix.target() != :host do
   import_config "target.exs"
 end

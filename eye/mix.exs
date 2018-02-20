@@ -22,8 +22,10 @@ defmodule Eye.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:jason, "~> 1.1"},
       {:picam, "~> 0.4.1"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:zbar, "~> 0.2.0"}
     ]
   end
 end
