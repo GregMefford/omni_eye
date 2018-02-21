@@ -1,7 +1,16 @@
 /* This file is for your main application css. */
 
-@import "./phoenix.css";
+@import "./bootstrap_4.0.0.min.css";
 
-.container {
-  max-width: 2400px;
+body {
+  padding: 0 10%;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+#canvas {
+  background-size: contain;
+  background-repeat: no-repeat;
 }
