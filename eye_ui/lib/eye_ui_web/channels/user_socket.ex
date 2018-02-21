@@ -1,5 +1,6 @@
 defmodule EyeUiWeb.UserSocket do
   use Phoenix.Socket
+  use Absinthe.Phoenix.Socket, schema: EyeUi.Schema
 
   ## Channels
   # channel "room:*", EyeUiWeb.RoomChannel

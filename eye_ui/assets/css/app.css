@@ -1,1 +1,14 @@
 /* This file is for your main application css. */
+
+body {
+  padding: 0 10%;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+#canvas {
+  background-size: contain;
+  background-repeat: no-repeat;
+}

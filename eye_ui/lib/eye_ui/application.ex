@@ -9,13 +9,19 @@ defmodule EyeUi.Application do
     children = [
       # Start the endpoint when the application starts
       EyeUiWeb.Endpoint,
-      {Task.Supervisor, [name: EyeUi.TaskSupervisor]}
+      child_spec(Absinthe.Subscription, [EyeUiWeb.Endpoint]),
+      {Task.Supervisor, [name: EyeUi.TaskSupervisor]},
+      EyeUi.Publishers.Barcode
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :rest_for_one, name: EyeUi.Supervisor]
     Supervisor.start_link(children, opts)
+  end
+
+  defp child_spec(module, args \\ []) do
+    %{id: module, start: {module, :start_link, args}}
   end
 
   # Tell Phoenix to update the endpoint configuration

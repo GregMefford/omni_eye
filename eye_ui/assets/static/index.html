@@ -1,8 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Eye - Video Stream</title>
-</head>
-<body> <img src="video.mjpg" /> </body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Eye - Video Stream</title>
+    <link rel="stylesheet" href="/css/app.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+      <div class="btn-toolbar my-2" role="toolbar" aria-label="Toolbar">
+        <div class="btn-group mr-2" role="group" aria-label="Resolution Options">
+          <a class="btn btn-secondary" href="#" role="button" id="640x480">640 x 480</a>
+          <a class="btn btn-secondary" href="#" role="button" id="1280x720">1280 x 720</a>
+          <a class="btn btn-secondary" href="#" role="button" id="1920x1080">1920 x 1080</a>
+        </div>
+      </div> <!-- toolbar -->
+
+      <svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" style="background-image: url('video.mjpg');"/>
+
+    </div> <!-- container -->
+
+    <script src="/js/app.js"></script>
+  </body>
 </html>
