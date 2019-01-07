@@ -111,3 +111,30 @@ document.getElementById("1920x1080").onclick = (event) => {
   event.preventDefault();
   setResolution(absintheSocket, 1920, 1080);
 };
+
+// Image Mode Buttons
+
+const setImageMode = (socket, effect) => {
+  AbsintheSocket.send(socket, {
+    operation: `mutation {
+      imgEffect(effect: ${effect}) {
+        imgEffect
+      }
+    }`
+  });
+};
+
+document.getElementById("normal").onclick = (event) => {
+  event.preventDefault();
+  setImageMode(absintheSocket, "NORMAL");
+};
+
+document.getElementById("sketch").onclick = (event) => {
+  event.preventDefault();
+  setImageMode(absintheSocket, "SKETCH");
+};
+
+document.getElementById("oilpaint").onclick = (event) => {
+  event.preventDefault();
+  setImageMode(absintheSocket, "OILPAINT");
+};

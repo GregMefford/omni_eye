@@ -6,6 +6,12 @@
       <a class="btn btn-secondary" href="#" role="button" id="1280x720">1280 x 720</a>
       <a class="btn btn-secondary" href="#" role="button" id="1920x1080">1920 x 1080</a>
     </div>
+    <a href="/snap" class="btn btn-secondary mr-2" role="group" aria-label="Snap">Snap</a>
+    <div class="btn-group mr-2" role="group" aria-label="Image Effects">
+      <a class="btn btn-secondary" href="#" role="button" id="normal">Normal</a>
+      <a class="btn btn-secondary" href="#" role="button" id="sketch">Sketch</a>
+      <a class="btn btn-secondary" href="#" role="button" id="oilpaint">Oil Paint</a>
+    </div>
   </div> <!-- toolbar -->
 
   <svg id="canvas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" style="background-image: url('video.mjpg');"/>

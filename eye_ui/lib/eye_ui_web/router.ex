@@ -23,6 +23,8 @@ defmodule EyeUiWeb.Router do
     socket: EyeUiWeb.UserSocket,
     interface: :simple
 
+  forward "/snap", EyeUiWeb.SnapPlug
+
   scope "/", EyeUiWeb do
     pipe_through :browser
 
