@@ -30,6 +30,12 @@ defmodule EyeUi.Schema do
       resolve &Resolvers.Camera.set_size/3
     end
 
+    @desc "Set image effect"
+    field :img_effect, :camera_config do
+      arg :effect, :img_effect
+      resolve &Resolvers.Camera.set_img_effect/3
+    end
+
   end
 
   subscription name: "Subscription" do
