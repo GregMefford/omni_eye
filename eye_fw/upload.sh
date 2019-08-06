@@ -99,6 +99,11 @@ echo "Uploading to $DESTINATION..."
 # for the private key password
 SSH_OPTIONS="-o PreferredAuthentications=publickey"
 
+# To simplify the training, we will use the same SSH keys that were used in the pre-burned firmware.
+# In your own projects, you should manage your own SSH keys and keep them private - don't check them
+# into GitHub like this.
+SSH_OPTIONS+=" -i training_keys/id_rsa"
+
 if [ "$(uname -s)" = "Darwin" ]; then
     DESTINATION_IP=$(arp -n $DESTINATION | sed 's/.* (\([0-9.]*\).*/\1/' || exit 0)
     if [ -z "$DESTINATION_IP" ]; then
